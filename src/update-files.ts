@@ -93,7 +93,8 @@ async function updateTextFile(relPath: string, operation: Operation): Promise<bo
 
     // Replace occurrences of the old version number that are surrounded by word boundaries.
     // This ensures that it matches "1.23.456" or "v1.23.456", but not "321.23.456".
-    let replacePattern = new RegExp("(\\b|v)" + sanitizedVersion + "\\b", "g");
+    // let replacePattern = new RegExp("(\\b|v)" + sanitizedVersion + "\\b", "g");
+    let replacePattern = new RegExp("(\\b|v)" + sanitizedVersion + "\\b");
 
     file.data = file.data.replace(replacePattern, "$1" + newVersion);
     await writeTextFile(file);
