@@ -1,15 +1,18 @@
-# Version-Bump-Prompt
+# Version Bump Prompt
 
-[![Cross-Platform Compatibility](https://jstools.dev/img/badges/os-badges.svg)](https://travis-ci.com/JS-DevTools/version-bump-prompt)
-[![Build Status](https://api.travis-ci.com/JS-DevTools/version-bump-prompt.svg?branch=master)](https://travis-ci.com/JS-DevTools/version-bump-prompt)
+[![Cross-Platform Compatibility](https://jstools.dev/img/badges/os-badges.svg)](https://github.com/JS-DevTools/version-bump-prompt/actions)
+[![Build Status](https://github.com/JS-DevTools/version-bump-prompt/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/version-bump-prompt/actions)
 
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/version-bump-prompt/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/version-bump-prompt)
 [![Dependencies](https://david-dm.org/JS-DevTools/version-bump-prompt.svg)](https://david-dm.org/JS-DevTools/version-bump-prompt)
 
-[![npm](https://img.shields.io/npm/v/version-bump-prompt.svg)](https://www.npmjs.com/package/version-bump-prompt)
-[![License](https://img.shields.io/npm/l/version-bump-prompt.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/@jsdevtools/version-bump-prompt.svg)](https://www.npmjs.com/package/@jsdevtools/version-bump-prompt)
+[![License](https://img.shields.io/npm/l/@jsdevtools/version-bump-prompt.svg)](LICENSE)
+[![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen)](https://plant.treeware.earth/JS-DevTools/version-bump-prompt)
 
 ![Screenshot](https://jstools.dev/version-bump-prompt/img/screenshot.gif)
+
+
 
 ### Automate your release process with a single command that can:
 
@@ -38,7 +41,7 @@ Installation
 You can install `version-bump-prompt` via [npm](https://docs.npmjs.com/about-npm/).
 
 ```bash
-npm install -g version-bump-prompt
+npm install -g @jsdevtools/version-bump-prompt
 ```
 
 
@@ -87,6 +90,8 @@ options:
   -q, --quiet               Suppress unnecessary output
 
   -h, --help                Show usage information
+
+  --ignore-scripts          Bypass version scripts
 
 files...
   One or more files and/or globs to bump (ex: README.md *.txt docs/**/*).
@@ -224,7 +229,7 @@ Version Scripts
 
 Contributing
 --------------------------
-Contributions, enhancements, and bug-fixes are welcome!  [File an issue](https://github.com/JS-DevTools/version-bump-prompt/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/version-bump-prompt/pulls).
+Contributions, enhancements, and bug-fixes are welcome!  [Open an issue](https://github.com/JS-DevTools/version-bump-prompt/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/version-bump-prompt/pulls).
 
 #### Building
 To build the project locally on your computer:
@@ -245,8 +250,9 @@ To build the project locally on your computer:
 
 License
 --------------------------
-Version-Bump-Prompt is a fork of [Version-Bump](https://github.com/alexeyraspopov/node-bump) by Alexey Raspopov (c).
-Both the original project and this fork are licensed under the [MIT License](http://en.wikipedia.org/wiki/MIT_License)
+Version Bump Prompt is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
+
+This package is [Treeware](http://treeware.earth). If you use it in production, then we ask that you [**buy the world a tree**](https://plant.treeware.earth/JS-DevTools/version-bump-prompt) to thank us for our work. By contributing to the Treeware forest you’ll be creating employment for local families and restoring wildlife habitats.
 
 
 
@@ -254,6 +260,8 @@ Big Thanks To
 --------------------------
 Thanks to these awesome companies for their support of Open Source developers ❤
 
+[![GitHub](https://jstools.dev/img/badges/github.svg)](https://github.com/open-source)
+[![NPM](https://jstools.dev/img/badges/npm.svg)](https://www.npmjs.com/)
+[![Coveralls](https://jstools.dev/img/badges/coveralls.svg)](https://coveralls.io)
 [![Travis CI](https://jstools.dev/img/badges/travis-ci.svg)](https://travis-ci.com)
 [![SauceLabs](https://jstools.dev/img/badges/sauce-labs.svg)](https://saucelabs.com)
-[![Coveralls](https://jstools.dev/img/badges/coveralls.svg)](https://coveralls.io)

@@ -4,7 +4,7 @@ import { manifest } from "../manifest";
  * Text explaining how to use the CLI
  */
 export const usageText = `
-Usage: ${manifest.name} [release] [options] [files...]
+Usage: bump [release] [options] [files...]
 
 release:
   The release version or type.  Can be one of the following:
@@ -42,6 +42,8 @@ options:
   -q, --quiet               Suppress unnecessary output
 
   -h, --help                Show usage information
+
+  --ignore-scripts          Bypass version scripts
 
 files...
   One or more files and/or globs to bump (ex: README.md *.txt docs/**/*).

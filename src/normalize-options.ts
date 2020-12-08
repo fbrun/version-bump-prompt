@@ -1,4 +1,4 @@
-import globby = require("globby"); // tslint:disable-line: no-require-imports
+import * as globby from "globby";
 import { hasMagic } from "globby";
 import { isReleaseType, ReleaseType } from "./release-type";
 import { VersionBumpOptions } from "./types/version-bump-options";
@@ -55,6 +55,7 @@ export interface NormalizedOptions {
   files: string[];
   cwd: string;
   interface: Interface;
+  ignoreScripts: boolean;
 }
 
 /**
@@ -67,6 +68,7 @@ export async function normalizeOptions(raw: VersionBumpOptions): Promise<Normali
   let all = Boolean(raw.all);
   let noVerify = Boolean(raw.noVerify);
   let cwd = raw.cwd || process.cwd();
+  let ignoreScripts = Boolean(raw.ignoreScripts);
 
   let release: Release;
   if (!raw.release || raw.release === "prompt") {
@@ -128,10 +130,10 @@ export async function normalizeOptions(raw: VersionBumpOptions): Promise<Normali
   }
 
   if (release.type === "prompt" && !(ui.input && ui.output)) {
-    throw new Error(`Cannot prompt for the version number because input or output has been disabled.`);
+    throw new Error("Cannot prompt for the version number because input or output has been disabled.");
   }
 
-  return { release, commit, tag, push, files, cwd, interface: ui };
+  return { release, commit, tag, push, files, cwd, interface: ui, ignoreScripts };
 }
 
 /**

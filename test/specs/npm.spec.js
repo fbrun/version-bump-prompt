@@ -5,11 +5,6 @@ const { expect } = require("chai");
 
 describe("npm version hooks", () => {
 
-  if (process.platform === "win32" && process.env.CI) {
-    // Spawning NPM fails on Windows due to a bug in NYC
-    return;
-  }
-
   it("should run the preversion script before updating the version number", () => {
     files.create("package.json", {
       version: "1.0.0",
@@ -139,6 +134,32 @@ describe("npm version hooks", () => {
 
     expect(bin[6].cmd).to.equal("git push --tags");
     expect(bin[6].version).to.equal("2.0.0");
+  });
+
+  it("should skip all version scripts when --ignore-scripts is used", () => {
+    files.create("package.json", {
+      version: "1.2.3",
+      scripts: {
+        preversion: "echo preversion",
+        version: "echo version",
+        postversion: "echo postversion",
+      }
+    });
+    files.create("package-lock.json", { version: "1.2.3" });
+
+    let cli = bump("major --ignore-scripts");
+
+    expect(cli).to.have.stderr("");
+    expect(cli).to.have.exitCode(0);
+
+    expect(cli).to.have.stdout(
+      `${check} Updated package.json to 2.0.0\n` +
+      `${check} Updated package-lock.json to 2.0.0\n`
+    );
+
+    // NPM should not have been run at all
+    let npm = mocks.npm();
+    expect(npm.length).to.equal(0);
   });
 
 });
